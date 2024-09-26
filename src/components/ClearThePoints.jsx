@@ -8,7 +8,6 @@ const ClearThePointScreen = () => {
         innerContainerStyle,
         inputWrapperStyle,
         inputStyle,
-        buttonStyle,
         playAreaStyle,
       } = useStyles();
   const {
@@ -27,11 +26,11 @@ const ClearThePointScreen = () => {
     <div style={containerStyle}>
       <div style={innerContainerStyle}>
         {allCleared ? (
-          <h2 style={{ color: '#4CAF50' }}>ALL CLEARED!</h2>
+          <h2>ALL CLEARED!</h2>
         ) : gameOver ? (
-          <h2 style={{ color: '#F44336' }}>GAME OVER!</h2>
+          <h2>GAME OVER!</h2>
         ) : (
-          <h2 style={{ color: '#3F51B5' }}>LET'S PLAY</h2>
+          <h2>LET'S PLAY</h2>
         )}
         <div style={{ gap: 30, marginBottom: 20, display: 'block' }}>
           <div style={inputWrapperStyle}>
@@ -39,7 +38,6 @@ const ClearThePointScreen = () => {
             <input
               value={inputValue}
               onChange={handleInputChange}
-              style={inputStyle}
             />
           </div>
           <div style={{ display: 'flex', gap: 30 }}>
@@ -51,14 +49,12 @@ const ClearThePointScreen = () => {
           {finish ? (
             <button
               onClick={handleRestart}
-              style={buttonStyle('#FF5722')}
             >
               Restart
             </button>
           ) : (
             <button
               onClick={handleGeneratePoints}
-              style={buttonStyle('#4CAF50')}
             >
               Play
             </button>
